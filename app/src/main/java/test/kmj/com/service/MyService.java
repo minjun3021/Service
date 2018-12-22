@@ -14,7 +14,7 @@ import app.akexorcist.bluetotohspp.library.BluetoothState;
 public class MyService extends Service {
     Boolean exit=true;
     Boolean Created=false;
-    BluetoothSPP bt=new BluetoothSPP(this);;
+    BluetoothSPP bt=new BluetoothSPP(this);
 
     IBinder mBinder = new MyBinder();
 
@@ -38,7 +38,6 @@ public class MyService extends Service {
     public void onCreate() {
         super.onCreate();
         // 서비스에서 가장 먼저 호출됨(최초에 한번만)
-
         blueToothStart();
 
 
@@ -80,6 +79,10 @@ public class MyService extends Service {
             public void onDataReceived(byte[] data, String message) {
                 //ㄷㅔ이터 받아질때 매번 실행
                 Log.e("test", message+" "+bt.getConnectedDeviceName());
+                Intent intent=new Intent(getApplicationContext(),Main2Activity.class);
+                startActivity(intent);
+
+
 
             }
         });

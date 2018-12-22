@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),//현재제어권자
                         MyService.class); // 이동할 컴포넌트
+
                 startService(intent); // 서비스 시작
 
             }
